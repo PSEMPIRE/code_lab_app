@@ -20,10 +20,12 @@ Widget card3(context, HomeDeals deal) {
     padding: const EdgeInsets.only(
       left: 10.0,
       top: 5,
-      bottom: 5,
+      bottom: 30,
     ),
     child: Container(
-      width: Get.width * 0.4 - 18,
+      // height: 40,
+      width: 150,
+      // width: Get.width * 0.4 - 18,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(14),

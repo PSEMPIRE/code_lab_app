@@ -148,12 +148,12 @@ Future codeDailog2(context, Deal deal) {
                 height: 20,
               ),
               deal.image == null
-                  ? Image.asset("assets/images/no-image.png")
+                  ? Image.asset("assets/images/no-image.png",fit:BoxFit.cover,height: 100,width: 150,)
                   : CachedNetworkImage(
                       imageUrl: deal.image.toString(),
                       fit: BoxFit.fill,
-                      height: 70,
-                      width: 100,
+                      height: 120,
+                      width: 150,
                     ),
               const SizedBox(
                 height: 20,

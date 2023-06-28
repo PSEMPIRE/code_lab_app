@@ -34,7 +34,7 @@ class BrandsScreen extends StatelessWidget {
                   width: Get.width,
                   child: Column(
                     children: [
-                      searchBox(),
+                      SearchWidget(),
                       Divider(),
                       // const SizedBox(
                       //   height: 86,

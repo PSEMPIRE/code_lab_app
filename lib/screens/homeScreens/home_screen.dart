@@ -1,6 +1,8 @@
 import 'package:code_lab/controllers/home_controller.dart';
 import 'package:code_lab/localStorage/pref.dart';
 import 'package:code_lab/routes/pages.dart';
+import 'package:code_lab/screens/homeScreens/brands_screen.dart';
+import 'package:code_lab/screens/homeScreens/morestore.dart';
 import 'package:code_lab/services/remote_services.dart';
 import 'package:code_lab/theme/colors.dart';
 import 'package:code_lab/widgets/cards/card_1.dart';
@@ -39,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                 width: Get.width,
                 child: Column(
                   children: [
-                    searchBox(),
+                    SearchWidget(),
 
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -121,13 +123,21 @@ class HomeScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
+                    InkWell(
+                        onTap: () {
+                          Get.to(ViewMore());
+                        },
+                        child: Text(
+                          'View More',
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        )),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: FutureBuilder(
                           future: getBanner(),
                           builder: (c, s) {
                             if (s.hasData) return card2(s.data);
-                            return democard2();
+                            return card2Carousel();
                           }),
                     ),
                     const SizedBox(
@@ -270,9 +280,18 @@ class HomeScreen extends StatelessWidget {
                             }));
                       }),
                     ),
+                    InkWell(
+                        onTap: () {
+                          Get.to(BrandsScreen());
+                        },
+                        child: Text(
+                          'View More',
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        )),
                     const SizedBox(
                       height: 10,
                     )
+                    
                   ],
                 ),
               ),
